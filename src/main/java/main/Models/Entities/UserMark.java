@@ -1,3 +1,4 @@
+/*
 package main.Models.Entities;
 
 import java.util.Objects;
@@ -78,4 +79,4 @@ public class UserMark implements Comparable<UserMark> {
                 ", userId=" + (user != null ? user.getId() : "null") +
                 '}';
     }
-}
+}*/

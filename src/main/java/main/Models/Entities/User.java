@@ -12,18 +12,18 @@ public class User {
     private String Password;
     private String Role;
     private PersonData personData;
-    private Set<UserMark> UserMarks = new HashSet<>();
+/*    private Set<UserMark> UserMarks = new HashSet<>();*/
     public User(){
 
     }
-    public User(int id, String name, String login, String password, String role, PersonData personData, Set<UserMark> userMarks) {
+    public User(int id, String name, String login, String password, String role, PersonData personData /*Set<UserMark> userMarks*/) {
         Id = id;
         Name = name;
         Login = login;
         Password = password;
         Role = role;
         this.personData = personData;
-        UserMarks = userMarks;
+/*        UserMarks = userMarks;*/
     }
 
     public PersonData getPersonData() {
@@ -73,12 +73,12 @@ public class User {
     public void setId(int id) {
         Id = id;
     }
-
+/*
     public Set<UserMark> getUserMarks() {
         return UserMarks;
     }
 
     public void setUserMarks(Set<UserMark> userMarks) {
         UserMarks = userMarks;
-    }
+    }*/
 }

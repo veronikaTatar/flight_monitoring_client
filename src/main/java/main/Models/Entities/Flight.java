@@ -1,3 +1,4 @@
+/*
 package main.Models.Entities;
 import java.util.Objects;
 
@@ -70,16 +71,20 @@ public class Flight {
     }
 
     // Методы для удобной работы
-   /* public String getRouteDescription() {
+   */
+/* public String getRouteDescription() {
         if (route != null) {
             return route.getDeparturePoint() + " → " + route.getArrivalPoint();
         }
         return "Маршрут не указан";
-    }*/
+    }*//*
 
-   /* public String getAircraftModel() {
+
+   */
+/* public String getAircraftModel() {
         return aircraft != null ? aircraft.getModel() : "Не указано";
-    }*/
+    }*//*
+
 
     // equals, hashCode и toString
     @Override
@@ -95,12 +100,18 @@ public class Flight {
         return Objects.hash(id);
     }
 
-    /*@Override
+    */
+/*@Override
     public String toString() {
         return String.format("Рейс %s [%s], %s, самолет: %s",
                 flightNumber,
                 getRouteDescription(),
-                aircraft != null ? "вместимость: " *//*+ aircraft.getCapacity()*//* : "",
+                aircraft != null ? "вместимость: " *//*
+*/
+/*+ aircraft.getCapacity()*//*
+*/
+/* : "",
                 getAircraftModel());
-    }*/
-}
+    }*//*
+
+}*/

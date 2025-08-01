@@ -3,16 +3,16 @@ import java.util.Objects;
 public class Passenger {
     private int id;
     private int placeNumber;
-    private Flight flight;
+/*    private Flight flight;*/
     private PersonData personData;
 
     public Passenger() {
     }
 
-    public Passenger(int id, int placeNumber, Flight flight, PersonData personData) {
+    public Passenger(int id, int placeNumber, /*Flight flight,*/ PersonData personData) {
         this.id = id;
         this.placeNumber = placeNumber;
-        this.flight = flight;
+        /*this.flight = flight;*/
         this.personData = personData;
     }
 
@@ -33,13 +33,13 @@ public class Passenger {
         this.placeNumber = placeNumber;
     }
 
-    public Flight getFlight() {
+   /* public Flight getFlight() {
         return flight;
     }
 
     public void setFlight(Flight flight) {
         this.flight = flight;
-    }
+    }*/
 
     public PersonData getPersonData() {
         return personData;
@@ -67,7 +67,7 @@ public class Passenger {
         return "Passenger{" +
                 "id=" + id +
                 ", placeNumber=" + placeNumber +
-                ", flightId=" + (flight != null ? flight.getId() : "null") +
+               /* ", flightId=" + (flight != null ? flight.getId() : "null") +*/
                 ", personDataId=" + (personData != null ? personData.getId() : "null") +
                 '}';
     }
