@@ -1,104 +1,102 @@
 package main.Models.Entities;
 
 import javafx.beans.property.*;
-
 import java.util.HashSet;
 import java.util.Set;
 
 public class PersonData {
-    private int Id;
-    private int Age;
-    private String Mail;
-    private String Address;
-    private String Sex;
-    private Set<User> Users = new HashSet<>();
-    private Set<Passenger> Passengers = new HashSet<>();
-    public PersonData(){
+    private int id;
+    private int age;
+    private String mail;
+    private String address;
+    private String sex;
+    private Set<User> users = new HashSet<>();
+    private Set<Passenger> passengers = new HashSet<>();
 
+    public PersonData() {
     }
+
     public PersonData(int id, int age, String mail, String address, String sex, Set<User> users, Set<Passenger> passengers) {
-        Id = id;
-        Age = age;
-        Mail = mail;
-        Address = address;
-        Sex = sex;
-        Users = users;
-        Passengers = passengers;
+        this.id = id;
+        this.age = age;
+        this.mail = mail;
+        this.address = address;
+        this.sex = sex;
+        this.users = users;
+        this.passengers = passengers;
     }
 
+    // Геттеры/сеттеры (стандартные)
     public String getSex() {
-        return Sex;
+        return sex;
     }
 
     public void setSex(String sex) {
-        Sex = sex;
+        this.sex = sex;
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public void setAddress(String address) {
-        Address = address;
+        this.address = address;
     }
 
     public String getMail() {
-        return Mail;
+        return mail;
     }
 
     public void setMail(String mail) {
-        Mail = mail;
+        this.mail = mail;
     }
 
     public int getAge() {
-        return Age;
+        return age;
     }
 
     public void setAge(int age) {
-        Age = age;
+        this.age = age;
     }
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
     public Set<Passenger> getPassengers() {
-        return Passengers;
+        return passengers;
     }
 
     public void setPassengers(Set<Passenger> passengers) {
-        Passengers = passengers;
+        this.passengers = passengers;
     }
 
     public Set<User> getUsers() {
-        return Users;
+        return users;
     }
 
     public void setUsers(Set<User> users) {
-        Users = users;
+        this.users = users;
     }
 
-
-    // В класс PersonData
+    // JavaFX Property-методы (оставлены с оригинальными именами для совместимости)
     public ObjectProperty<Integer> ageProperty() {
-        return new SimpleIntegerProperty(Age).asObject();
+        return new SimpleIntegerProperty(age).asObject();
     }
 
     public StringProperty mailProperty() {
-        return new SimpleStringProperty(Mail);
+        return new SimpleStringProperty(mail);
     }
 
     public StringProperty addressProperty() {
-        return new SimpleStringProperty(Address);
+        return new SimpleStringProperty(address);
     }
 
     public StringProperty sexProperty() {
-        return new SimpleStringProperty(Sex);
+        return new SimpleStringProperty(sex);
     }
-
-
 }

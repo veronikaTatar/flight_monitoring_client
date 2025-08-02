@@ -115,7 +115,7 @@ public class AdminMenu {
 
     private void deleteSelectedUsers() {
         User selectedUser = PersonTable.getSelectionModel().getSelectedItem();
-
+        System.out.println("Удаляемый пользователь: " + new Gson().toJson(selectedUser));
         if (selectedUser == null) {
             showError("Выберите пользователя для удаления");
             return;
@@ -136,6 +136,7 @@ public class AdminMenu {
                 loadUsersData(); // Обновляем таблицу
                 showError(""); // Скрываем сообщение об ошибке
             } else {
+                System.out.println("Ответ сервера: " + answer); // В методе deleteSelectedUsers()
                 showError("Ошибка удаления: " + response.getResponseData());
             }
         } catch (IOException e) {
