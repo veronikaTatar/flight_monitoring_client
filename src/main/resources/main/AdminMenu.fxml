@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="389.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controllers.AdminMenu">
+    <children>
+        <Button fx:id="buttonBack" layoutX="56.0" layoutY="325.0" mnemonicParsing="false" onAction="#Back_Pressed" text="Назад" />
+        <Label fx:id="labelMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="30.0" layoutY="296.0" text="error" textFill="RED" visible="false" />
+        <Label layoutX="30.0" layoutY="44.0" prefHeight="0.0" prefWidth="400.0" text="Вход в роль администратора">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+      <Button fx:id="DeleteButton" layoutX="230.0" layoutY="270.0" mnemonicParsing="false" text="Удаление записи" />
+      <TableView fx:id="PersonTable" layoutX="34.0" layoutY="81.0" prefHeight="146.0" prefWidth="569.0">
+        <columns>
+            <TableColumn fx:id="NameColumn" prefWidth="176.00002670288086" text="Имя" />
+          <TableColumn fx:id="EmailColumn" prefWidth="115.19996643066406" text="Email" />
+            <TableColumn fx:id="AgeColumn" prefWidth="61.5999755859375" text="Возраст" />
+            <TableColumn fx:id="SexColumn" minWidth="0.0" prefWidth="39.20001220703125" text="Пол" />
+            <TableColumn fx:id="AddressColumn" prefWidth="184.7999267578125" text="Адрес" />
+        </columns>
+      </TableView>
+    </children>
+</AnchorPane>

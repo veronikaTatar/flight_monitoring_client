@@ -1,5 +1,7 @@
 package main.Models.Entities;
 
+import javafx.beans.property.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -79,4 +81,24 @@ public class PersonData {
     public void setUsers(Set<User> users) {
         Users = users;
     }
+
+
+    // В класс PersonData
+    public ObjectProperty<Integer> ageProperty() {
+        return new SimpleIntegerProperty(Age).asObject();
+    }
+
+    public StringProperty mailProperty() {
+        return new SimpleStringProperty(Mail);
+    }
+
+    public StringProperty addressProperty() {
+        return new SimpleStringProperty(Address);
+    }
+
+    public StringProperty sexProperty() {
+        return new SimpleStringProperty(Sex);
+    }
+
+
 }

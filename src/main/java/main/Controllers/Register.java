@@ -19,9 +19,7 @@ import main.Utility.ClientSocket;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashSet;
 import java.util.ResourceBundle;
-import java.util.Set;
 
 public class Register  implements Initializable {
     public PasswordField passwordfieldPassword;
@@ -76,7 +74,7 @@ public class Register  implements Initializable {
             ClientSocket.getInstance().setUser(new Gson().fromJson(response.getResponseData(), User.class));
             Stage stage = (Stage) buttonBack.getScene().getWindow();
             Parent root;
-            root = FXMLLoader.load(getClass().getResource("Flights.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/main/UserMenu.fxml"));
             Scene newScene = new Scene(root);
             stage.setScene(newScene);
         } else {

@@ -1,29 +1,70 @@
 package main.Models.Entities;
 
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import main.Enums.Roles;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class User {
-    private int Id;
-    private String Name;
-    private String Login;
-    private String Password;
-    private String Role;
+    private int id;
+    private String name;
+    private String login;
+    private String password;
+    private Roles role;  // Изменено на enum тип
     private PersonData personData;
-/*    private Set<UserMark> UserMarks = new HashSet<>();*/
-    public User(){
 
+    public User() {
     }
-    public User(int id, String name, String login, String password, String role, PersonData personData /*Set<UserMark> userMarks*/) {
-        Id = id;
-        Name = name;
-        Login = login;
-        Password = password;
-        Role = role;
+
+    public User(int id, String name, String login, String password, Roles role, PersonData personData) {
+        this.id = id;
+        this.name = name;
+        this.login = login;
+        this.password = password;
+        this.role = role;
         this.personData = personData;
-/*        UserMarks = userMarks;*/
+    }
+
+    // Геттеры и сеттеры
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Roles getRole() {
+        return role;
+    }
+
+    public void setRole(Roles role) {
+        this.role = role;
     }
 
     public PersonData getPersonData() {
@@ -34,51 +75,17 @@ public class User {
         this.personData = personData;
     }
 
-    public String getRole() {
-        return Role;
+
+    // В класс User
+    public StringProperty nameProperty() {
+        return new SimpleStringProperty(name);
     }
 
-    public void setRole(Roles role) {
-        Role = role.toString();
+    public StringProperty loginProperty() {
+        return new SimpleStringProperty(login);
     }
 
-    public String getPassword() {
-        return Password;
+    public ObjectProperty<Roles> roleProperty() {
+        return new SimpleObjectProperty<>(role);
     }
-
-    public void setPassword(String password) {
-        Password = password;
-    }
-
-    public String getLogin() {
-        return Login;
-    }
-
-    public void setLogin(String login) {
-        Login = login;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
-    }
-
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
-    }
-/*
-    public Set<UserMark> getUserMarks() {
-        return UserMarks;
-    }
-
-    public void setUserMarks(Set<UserMark> userMarks) {
-        UserMarks = userMarks;
-    }*/
 }
