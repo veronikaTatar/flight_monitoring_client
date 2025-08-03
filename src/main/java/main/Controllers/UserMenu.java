@@ -23,15 +23,15 @@ public class UserMenu {
     @FXML private TextField AddressField;
     @FXML private Slider AgeSlider;
     @FXML private TextField LoginField;
-    @FXML private RadioButton MRadioButton;
+    @FXML private TextField NameField;
     @FXML private PasswordField PassField;
     @FXML private PasswordField PassTwoField;
     @FXML private Button UpdateAddressButton;
     @FXML private Button UpdateAgeButton;
     @FXML private Button UpdateLoginButton;
     @FXML private Button UpdatePasswordButton;
-    @FXML private Button UpdateSexButton;
-    @FXML private RadioButton WRadioButton;
+    @FXML private Button UpdateNameButton;
+
     @FXML private Button buttonBack;
     @FXML private Label labelMessage;
 
@@ -42,11 +42,6 @@ public class UserMenu {
     void initialize() {
         // Загружаем данные пользователя при инициализации
         loadUserData();
-
-        // Настройка ToggleGroup для RadioButton
-        ToggleGroup sexToggleGroup = new ToggleGroup();
-        MRadioButton.setToggleGroup(sexToggleGroup);
-        WRadioButton.setToggleGroup(sexToggleGroup);
 
         // Настройка AgeSlider
         AgeSlider.setMin(1);
@@ -101,14 +96,10 @@ public class UserMenu {
     private void updateFields() {
         if (currentUser != null && currentUser.getPersonData() != null) {
             LoginField.setText(currentUser.getLogin());
+            NameField.setText(currentUser.getName());
             AddressField.setText(currentUser.getPersonData().getAddress());
             AgeSlider.setValue(currentUser.getPersonData().getAge());
 
-            if ("M".equals(currentUser.getPersonData().getSex())) {
-                MRadioButton.setSelected(true);
-            } else {
-                WRadioButton.setSelected(true);
-            }
         }
     }
 
@@ -151,10 +142,13 @@ public class UserMenu {
     }
 
     @FXML
-    void UpdateSex_Pressed(ActionEvent event) {
-        String sex = MRadioButton.isSelected() ? "M" : "Ж";
-        currentUser.getPersonData().setSex(sex);
-        updateUser();
+    void UpdateName_Pressed(ActionEvent event) {
+        if (!NameField.getText().isEmpty()) {
+            currentUser.setName(NameField.getText());
+            updateUser();
+        } else {
+            showMessage("Поле имя/фамилия не может быть пустым");
+        }
     }
 
     private void updateUser() {
