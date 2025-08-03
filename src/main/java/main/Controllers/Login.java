@@ -46,11 +46,17 @@ public class Login {
 
         if (responseModel.getResponseStatus() == ResponseStatus.OK) {
             User authenticatedUser = new Gson().fromJson(responseModel.getResponseData(), User.class);
-            ClientSocket.getInstance().setUser(authenticatedUser);
-            redirectBasedOnRole(authenticatedUser.getRole());
 
+            // Сохраняем полного пользователя (важно!)
+            ClientSocket.getInstance().setUser(authenticatedUser);
+
+            // Сохраняем ID из authenticatedUser, а не из user!
+            ClientSocket.getInstance().setCurrentUserId(authenticatedUser.getId());
+
+            redirectBasedOnRole(authenticatedUser.getRole());
         } else {
             labelMessage.setVisible(true);
+            labelMessage.setText(responseModel.getResponseMessage());
         }
     }
 

@@ -30,6 +30,15 @@ public class ClientSocket {
     private BufferedReader in;
     private PrintWriter out;
 
+    private int currentUserId;
+
+    public void setCurrentUserId(int userId) {
+        this.currentUserId = userId;
+    }
+
+    public int getCurrentUserId() {
+        return currentUserId;
+    }
     public Socket getSocket() {
         return socket;
     }
